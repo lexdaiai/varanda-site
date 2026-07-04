@@ -12,6 +12,7 @@ export default function Home() {
       <Sobre />
       <Almoco />
       <CardapioSemanal />
+      <PratosAssinatura />
       <Sopas />
       <Galeria />
       <ClubVaranda />
@@ -27,10 +28,10 @@ function Nav() {
   return (
     <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, background: "rgba(249,242,234,0.95)", backdropFilter: "blur(8px)", borderBottom: "1px solid rgba(155,158,115,0.2)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", height: 64, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <span style={{ fontFamily: "var(--font-heading)", fontSize: 22, fontWeight: 700, color: "#B66331" }}>Varanda</span>
-          <span style={{ fontFamily: "var(--font-heading)", fontSize: 22, fontWeight: 400, color: "#9B9E73" }}>Gourmet</span>
-        </div>
+        <a href="#" style={{ textDecoration: "none", display: "flex", alignItems: "baseline", gap: 6 }}>
+          <span style={{ fontFamily: "var(--font-heading, Georgia, serif)", fontSize: 22, fontWeight: 700, color: "#B66331", letterSpacing: "0.01em" }}>Varanda</span>
+          <span style={{ fontFamily: "var(--font-heading, Georgia, serif)", fontSize: 18, fontWeight: 400, color: "#2C2416", letterSpacing: "0.05em" }}>Gourmet</span>
+        </a>
         <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
           <a href="#cardapio" style={{ color: "#2C2416", textDecoration: "none", fontSize: 14, fontWeight: 400, letterSpacing: "0.05em" }}>Cardápio</a>
           <a href="#sopas" style={{ color: "#2C2416", textDecoration: "none", fontSize: 14, fontWeight: 400, letterSpacing: "0.05em" }}>Sopas</a>
@@ -47,15 +48,14 @@ function Nav() {
 
 function Hero() {
   return (
-    <section style={{ position: "relative", height: "100vh", minHeight: 600, display: "flex", alignItems: "flex-end" }}>
-      <Image
-        src="/images/fachada.jpg"
-        alt="Fachada do Varanda Gourmet"
-        fill
-        priority
-        style={{ objectFit: "cover", objectPosition: "center" }}
-      />
-      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(44,36,22,0.85) 0%, rgba(44,36,22,0.3) 50%, rgba(44,36,22,0.1) 100%)" }} />
+    <section style={{
+      position: "relative", height: "100vh", minHeight: 600, display: "flex", alignItems: "flex-end",
+      backgroundImage: "url('/images/fachada-noturna.jpg')",
+      backgroundSize: "cover",
+      backgroundPosition: "center center",
+      backgroundRepeat: "no-repeat",
+    }}>
+      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(44,36,22,0.9) 0%, rgba(44,36,22,0.35) 50%, rgba(44,36,22,0.1) 100%)" }} />
       <div style={{ position: "relative", maxWidth: 1200, margin: "0 auto", padding: "0 24px 80px", width: "100%" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(182,99,49,0.9)", borderRadius: 999, padding: "6px 16px", marginBottom: 20 }}>
           <span style={{ fontSize: 14, color: "#fff", fontWeight: 600 }}>🏆 Melhor por Quilo do Paraná — 2025</span>
@@ -214,7 +214,7 @@ function Almoco() {
             </div>
           </div>
           <div style={{ borderRadius: 16, overflow: "hidden", aspectRatio: "3/4", position: "relative" }}>
-            <Image src="/images/camarao.jpg" alt="Camarão empanado" fill style={{ objectFit: "cover" }} />
+            <Image src="/images/buffet3.jpg" alt="Buffet do almoço" fill style={{ objectFit: "cover" }} />
           </div>
         </div>
       </div>
@@ -224,9 +224,9 @@ function Almoco() {
 
 function CardapioSemanal() {
   const especiais = [
-    { dia: "Quarta", prato: "Feijoada Branca Nobre", descricao: "Uma versão refinada da feijoada tradicional", foto: "/images/buffet2.jpg" },
-    { dia: "Sexta", prato: "Churrasco", descricao: "Cortes nobres preparados na brasa", foto: "/images/churrasco.jpg" },
-    { dia: "Sábado", prato: "Feijoada Nobre", descricao: "Receita da casa com ingredientes selecionados", foto: "/images/buffet3.jpg" },
+    { dia: "Sexta-Feira", prato: "Churrasco", descricao: "Cortes nobres na brasa: picanha, linguiça artesanal e muito mais", foto: "/images/churrasco2.jpg" },
+    { dia: "Sábado", prato: "Festival de Sushi", descricao: "Sushi artesanal com salmon, uramaki e temaki selecionados", foto: "/images/sushi.jpg" },
+    { dia: "Domingo", prato: "Frutos do Mar", descricao: "Camarão, salmão, polvo e especialidades do mar no buffet", foto: "/images/frutos-do-mar.webp" },
   ];
   return (
     <section style={{ padding: "96px 24px", background: "#F9F2EA" }}>
@@ -266,6 +266,62 @@ function CardapioSemanal() {
   );
 }
 
+function PratosAssinatura() {
+  const pratos = [
+    {
+      nome: "Tilápia à Moda do Chef",
+      descricao: "Prato vencedor do prêmio O Quilo é Nosso 2025 — Paraná. Tilápia ao forno com crosta dourada artesanal, ervas frescas e temperos da casa.",
+      badge: "🏆 Prato Vencedor 2025",
+      foto: "/images/tilapia-chef.jpg",
+    },
+    {
+      nome: "Lasanha de Cordeiro",
+      descricao: "Massa artesanal em camadas com cordeiro desfiado e molho especial da casa, gratinada ao ponto certo. Uma das grandes criações do nosso buffet.",
+      badge: "⭐ Assinatura da Casa",
+      foto: "/images/lasanha-cordeiro.jpg",
+    },
+    {
+      nome: "Salmão ao Molho Varanda",
+      descricao: "Filé de salmão grelhado ao ponto com molho exclusivo da casa. Uma combinação que se tornou favorita dos nossos clientes.",
+      badge: "⭐ Assinatura da Casa",
+      foto: "/images/salmao.jpg",
+    },
+  ];
+  return (
+    <section style={{ padding: "96px 24px", background: "#2C2416" }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        <div style={{ textAlign: "center", marginBottom: 64 }}>
+          <p style={{ color: "#B66331", fontSize: 13, fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 12 }}>
+            Assinaturas da Casa
+          </p>
+          <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(30px, 3.5vw, 48px)", color: "#F9F2EA", lineHeight: 1.2, marginBottom: 16 }}>
+            Pratos que nos tornaram referência
+          </h2>
+          <p style={{ color: "#9B9E73", fontSize: 17, maxWidth: 560, margin: "0 auto", fontWeight: 300, lineHeight: 1.7 }}>
+            Criações que conquistaram prêmios e o coração dos nossos clientes.
+          </p>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }}>
+          {pratos.map((p) => (
+            <div key={p.nome} style={{ borderRadius: 16, overflow: "hidden", background: "rgba(249,242,234,0.05)", border: "1px solid rgba(182,99,49,0.2)" }}>
+              <div style={{ position: "relative", aspectRatio: "4/3" }}>
+                <Image src={p.foto} alt={p.nome} fill style={{ objectFit: "cover" }} />
+                <div style={{ position: "absolute", top: 16, left: 16, background: "#B66331", color: "#fff", borderRadius: 999, padding: "4px 14px", fontSize: 12, fontWeight: 700 }}>
+                  {p.badge}
+                </div>
+              </div>
+              <div style={{ padding: 24 }}>
+                <h3 style={{ fontFamily: "var(--font-heading)", fontSize: 20, color: "#F9F2EA", marginBottom: 10 }}>{p.nome}</h3>
+                <p style={{ fontSize: 14, color: "#9B9E73", lineHeight: 1.7, fontWeight: 300 }}>{p.descricao}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Sopas() {
   const sabores = [
     "Canja", "Costelinha com Aipim", "Eslava", "Blumenau com Salsa",
@@ -274,7 +330,7 @@ function Sopas() {
   const acompanhamentos = ["Crispy de Couve", "Crispy de Cebola", "Torradinhas", "Queijo Ralado", "Canjica (sobremesa)"];
   return (
     <section id="sopas" style={{ padding: "96px 24px", background: "#2C2416" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start" }}>
         <div>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, marginBottom: 20 }}>
             <span style={{ fontSize: 20 }}>❄️</span>
@@ -318,16 +374,20 @@ function Sopas() {
           </div>
           <p style={{ marginTop: 16, fontSize: 13, color: "#9B9E73" }}>Terça a Sábado · Das 18h às 23h · Open Wine avulso: R$ 59,90</p>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-          <div style={{ borderRadius: 16, overflow: "hidden", aspectRatio: "3/4", position: "relative" }}>
-            <Image src="/images/paella.jpg" alt="Arroz de polvo" fill style={{ objectFit: "cover" }} />
-          </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: 32 }}>
-            <div style={{ borderRadius: 16, overflow: "hidden", aspectRatio: "1", position: "relative" }}>
-              <Image src="/images/drink1.jpg" alt="Drink do Varanda" fill style={{ objectFit: "cover" }} />
+        <div style={{ position: "relative" }}>
+          {/* warm glow behind photos */}
+          <div style={{ position: "absolute", inset: -24, borderRadius: 32, background: "radial-gradient(ellipse at 60% 40%, rgba(182,99,49,0.12) 0%, transparent 70%)", pointerEvents: "none" }} />
+          <div style={{ display: "flex", gap: 12, height: 520, position: "relative" }}>
+            <div style={{ flex: "0 0 58%", borderRadius: 20, overflow: "hidden", position: "relative", boxShadow: "0 8px 32px rgba(0,0,0,0.4)" }}>
+              <Image src="/images/sopa1.jpg" alt="Sopas artesanais Varanda" fill style={{ objectFit: "cover" }} />
             </div>
-            <div style={{ borderRadius: 16, overflow: "hidden", aspectRatio: "1", position: "relative" }}>
-              <Image src="/images/buffet2.jpg" alt="Buffet varanda" fill style={{ objectFit: "cover" }} />
+            <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 12 }}>
+              <div style={{ flex: 1, borderRadius: 20, overflow: "hidden", position: "relative", boxShadow: "0 8px 32px rgba(0,0,0,0.4)" }}>
+                <Image src="/images/sopa2.jpg" alt="Sopa de inverno" fill style={{ objectFit: "cover" }} />
+              </div>
+              <div style={{ flex: 1, borderRadius: 20, overflow: "hidden", position: "relative", boxShadow: "0 8px 32px rgba(0,0,0,0.4)" }}>
+                <Image src="/images/sopa3.jpg" alt="Buffet de sopas" fill style={{ objectFit: "cover" }} />
+              </div>
             </div>
           </div>
         </div>
@@ -338,12 +398,12 @@ function Sopas() {
 
 function Galeria() {
   const fotos = [
-    { src: "/images/salada2.jpg", alt: "Salada bar" },
-    { src: "/images/buffet3.jpg", alt: "Buffet completo" },
-    { src: "/images/salada3.jpg", alt: "Saladas frescas" },
-    { src: "/images/drinks2.jpg", alt: "Drinks" },
-    { src: "/images/salada.jpg", alt: "Saladas variadas" },
-    { src: "/images/churrasco.jpg", alt: "Churrasco sexta" },
+    { src: "/images/buffet.jpg", alt: "Buffet completo" },
+    { src: "/images/sushi.jpg", alt: "Festival de sushi" },
+    { src: "/images/sobremesa.jpg", alt: "Sobremesas artesanais" },
+    { src: "/images/salada3.jpg", alt: "Salada fresca" },
+    { src: "/images/salada.jpg", alt: "Saladas frescas" },
+    { src: "/images/salada2.jpg", alt: "Frutos do mar no buffet" },
   ];
   return (
     <section style={{ padding: "96px 24px", background: "#F9F2EA" }}>
@@ -352,10 +412,10 @@ function Galeria() {
           <p style={{ color: "#B66331", fontSize: 13, fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 12 }}>Galeria</p>
           <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(30px, 3.5vw, 48px)", color: "#2C2416" }}>Uma experiência visual</h2>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
-          {fotos.map((f, i) => (
-            <div key={f.src} style={{ borderRadius: 12, overflow: "hidden", aspectRatio: i === 0 || i === 3 ? "4/3" : "1", position: "relative" }}>
-              <Image src={f.src} alt={f.alt} fill style={{ objectFit: "cover", transition: "transform 0.4s ease" }} />
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
+          {fotos.map((f) => (
+            <div key={f.src} style={{ borderRadius: 16, overflow: "hidden", aspectRatio: "4/3", position: "relative" }}>
+              <Image src={f.src} alt={f.alt} fill style={{ objectFit: "cover", transition: "transform 0.5s ease" }} />
             </div>
           ))}
         </div>
@@ -498,8 +558,7 @@ function Footer() {
     <footer style={{ background: "#1a1208", padding: "32px 24px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
         <div>
-          <span style={{ fontFamily: "var(--font-heading)", fontSize: 18, fontWeight: 700, color: "#B66331" }}>Varanda</span>
-          <span style={{ fontFamily: "var(--font-heading)", fontSize: 18, fontWeight: 400, color: "#9B9E73" }}> Gourmet</span>
+          <Image src="/images/logo.jpg" alt="Varanda Gourmet" width={130} height={65} style={{ objectFit: "contain" }} />
           <p style={{ color: "#5a4a38", fontSize: 13, marginTop: 4 }}>© 2025 Varanda Gourmet · Campo Largo, PR</p>
         </div>
         <div style={{ display: "flex", gap: 24 }}>
