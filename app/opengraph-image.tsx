@@ -14,7 +14,7 @@ export default function Image() {
         {/* Award badge */}
         <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 28 }}>
           <div style={{ background: "rgba(182,99,49,0.9)", borderRadius: 999, padding: "6px 18px", display: "flex" }}>
-            <span style={{ fontSize: 15, color: "#fff", fontWeight: 700 }}>🏆 Melhor por Quilo do Paraná 2025</span>
+            <span style={{ fontSize: 15, color: "#fff", fontWeight: 700 }}>🏆 Melhor Buffet por Quilo do Paraná 2025</span>
           </div>
         </div>
         {/* Logo */}

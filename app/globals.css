@@ -29,3 +29,76 @@ body {
   color: var(--dark);
   -webkit-font-smoothing: antialiased;
 }
+
+/* ===================== HERO ENTRANCE ===================== */
+
+@keyframes fadeUpIn {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDownIn {
+  from { opacity: 0; transform: translateY(-14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-badge { animation: fadeDownIn 0.5s ease 0.1s both; }
+.hero-title { animation: fadeUpIn  0.7s ease 0.25s both; }
+.hero-sub   { animation: fadeUpIn  0.7s ease 0.45s both; }
+.hero-ctas  { animation: fadeUpIn  0.7s ease 0.65s both; }
+
+/* ===================== SCROLL REVEAL ===================== */
+
+.anim-up    { opacity: 0; transform: translateY(32px); }
+.anim-left  { opacity: 0; transform: translateX(-32px); }
+.anim-right { opacity: 0; transform: translateX(32px); }
+
+.anim-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* ===================== HOVER: NAV LINKS ===================== */
+
+.nav-link { position: relative; }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: #B66331;
+  transition: width 0.25s ease;
+}
+.nav-link:hover::after { width: 100%; }
+
+/* ===================== HOVER: CARDS ===================== */
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(44, 36, 22, 0.18) !important;
+}
+
+/* ===================== HOVER: PHOTO ZOOM ===================== */
+
+.photo-zoom img {
+  transition: transform 0.55s ease;
+}
+.photo-zoom:hover img {
+  transform: scale(1.07);
+}
+
+/* ===================== HOVER: BUTTONS ===================== */
+
+.btn-scale {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-scale:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 28px rgba(182, 99, 49, 0.38);
+}
