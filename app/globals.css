@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+:root {
+  --cream: #F9F2EA;
+  --sage-light: #CCCEB9;
+  --sage: #9B9E73;
+  --terracota: #B66331;
+  --dark: #2C2416;
+}
+
+@theme inline {
+  --color-cream: var(--cream);
+  --color-sage-light: var(--sage-light);
+  --color-sage: var(--sage);
+  --color-terracota: var(--terracota);
+  --color-dark: var(--dark);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--dark);
+  -webkit-font-smoothing: antialiased;
+}
