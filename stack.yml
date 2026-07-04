@@ -20,14 +20,14 @@ services:
         - "traefik.http.routers.varanda.rule=Host(`varandacl.com.br`)"
         - "traefik.http.routers.varanda.entrypoints=websecure"
         - "traefik.http.routers.varanda.tls=true"
-        - "traefik.http.routers.varanda.tls.certresolver=letsencrypt"
+        - "traefik.http.routers.varanda.tls.certresolver=letsencryptresolver"
         - "traefik.http.services.varanda.loadbalancer.server.port=3000"
 
         # --- Redirect www → sem www ---
         - "traefik.http.routers.varanda-www.rule=Host(`www.varandacl.com.br`)"
         - "traefik.http.routers.varanda-www.entrypoints=websecure"
         - "traefik.http.routers.varanda-www.tls=true"
-        - "traefik.http.routers.varanda-www.tls.certresolver=letsencrypt"
+        - "traefik.http.routers.varanda-www.tls.certresolver=letsencryptresolver"
         - "traefik.http.routers.varanda-www.middlewares=varanda-nowww"
         - "traefik.http.middlewares.varanda-nowww.redirectregex.regex=^https://www\\.varandacl\\.com\\.br/(.*)"
         - "traefik.http.middlewares.varanda-nowww.redirectregex.replacement=https://varandacl.com.br/$${1}"
