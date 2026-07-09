@@ -102,3 +102,68 @@ body {
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 8px 28px rgba(182, 99, 49, 0.38);
 }
+
+/* ===================== RESPONSIVE LAYOUT ===================== */
+
+.nav-desktop-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.grid-cols-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-cols-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.sopas-photo-stack {
+  display: flex;
+  gap: 12px;
+  height: 520px;
+  position: relative;
+}
+
+.sopas-col-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .nav-desktop-links {
+    display: none;
+  }
+
+  .grid-cols-2,
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+    gap: 32px !important;
+  }
+
+  .sopas-photo-stack {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .sopas-photo-stack > *:first-child {
+    flex: none !important;
+    height: 280px;
+    width: 100%;
+  }
+
+  .sopas-col-right {
+    flex-direction: row;
+    height: 180px;
+  }
+
+  section {
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+}

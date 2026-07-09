@@ -32,13 +32,15 @@ function Nav() {
           <span style={{ fontFamily: "var(--font-heading, Georgia, serif)", fontSize: 22, fontWeight: 700, color: "#B66331", letterSpacing: "0.01em" }}>Varanda</span>
           <span style={{ fontFamily: "var(--font-heading, Georgia, serif)", fontSize: 18, fontWeight: 400, color: "#2C2416", letterSpacing: "0.05em" }}>Gourmet</span>
         </a>
-        <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
-          <a href="#cardapio" className="nav-link" style={{ color: "#2C2416", textDecoration: "none", fontSize: 14, fontWeight: 400, letterSpacing: "0.05em" }}>Cardápio</a>
-          <a href="#sopas" className="nav-link" style={{ color: "#2C2416", textDecoration: "none", fontSize: 14, fontWeight: 400, letterSpacing: "0.05em" }}>Sopas</a>
-          <a href="#club" className="nav-link" style={{ color: "#2C2416", textDecoration: "none", fontSize: 14, fontWeight: 400, letterSpacing: "0.05em" }}>Club</a>
-          <a href="#contato" className="nav-link" style={{ color: "#2C2416", textDecoration: "none", fontSize: 14, fontWeight: 400, letterSpacing: "0.05em" }}>Contato</a>
+        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+          <div className="nav-desktop-links">
+            <a href="#cardapio" className="nav-link" style={{ color: "#2C2416", textDecoration: "none", fontSize: 14, fontWeight: 400, letterSpacing: "0.05em" }}>Cardápio</a>
+            <a href="#sopas" className="nav-link" style={{ color: "#2C2416", textDecoration: "none", fontSize: 14, fontWeight: 400, letterSpacing: "0.05em" }}>Sopas</a>
+            <a href="#club" className="nav-link" style={{ color: "#2C2416", textDecoration: "none", fontSize: 14, fontWeight: 400, letterSpacing: "0.05em" }}>Club</a>
+            <a href="#contato" className="nav-link" style={{ color: "#2C2416", textDecoration: "none", fontSize: 14, fontWeight: 400, letterSpacing: "0.05em" }}>Contato</a>
+          </div>
           <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="btn-scale"
-            style={{ background: "#B66331", color: "#fff", padding: "10px 24px", borderRadius: 999, fontSize: 14, fontWeight: 700, textDecoration: "none", letterSpacing: "0.05em" }}>
+            style={{ background: "#B66331", color: "#fff", padding: "10px 24px", borderRadius: 999, fontSize: 14, fontWeight: 700, textDecoration: "none", letterSpacing: "0.05em", whiteSpace: "nowrap" }}>
             Reservar Mesa
           </a>
         </div>
@@ -85,7 +87,7 @@ function Hero() {
 function Award() {
   return (
     <section style={{ background: "#2C2416", padding: "64px 24px" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
+      <div className="grid-cols-2" style={{ maxWidth: 1200, margin: "0 auto", gap: 64, alignItems: "center" }}>
         <FadeIn direction="left">
           <div>
             <p style={{ color: "#B66331", fontSize: 13, fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 16 }}>
@@ -123,7 +125,7 @@ function Sobre() {
   ];
   return (
     <section style={{ padding: "96px 24px", background: "#F9F2EA" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+      <div className="grid-cols-2" style={{ maxWidth: 1200, margin: "0 auto", gap: 80, alignItems: "center" }}>
         <FadeIn direction="left">
           <div className="photo-zoom" style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: "3/4" }}>
             <Image src="/images/buffet.jpg" alt="Buffet do Varanda Gourmet" fill style={{ objectFit: "cover" }} />
@@ -177,7 +179,7 @@ function Almoco() {
             </p>
           </div>
         </FadeIn>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 32, alignItems: "start" }}>
+        <div className="grid-cols-3" style={{ gap: 32, alignItems: "start" }}>
           <FadeIn direction="left" delay={100}>
             <div className="photo-zoom" style={{ borderRadius: 16, overflow: "hidden", aspectRatio: "3/4", position: "relative" }}>
               <Image src="/images/salada.jpg" alt="Salada do buffet" fill style={{ objectFit: "cover" }} />
@@ -243,7 +245,7 @@ function CardapioSemanal() {
             </h2>
           </div>
         </FadeIn>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }}>
+        <div className="grid-cols-3" style={{ gap: 24 }}>
           {especiais.map((e, i) => (
             <FadeIn key={e.dia} delay={i * 120}>
               <div className="card-hover" style={{ borderRadius: 16, overflow: "hidden", background: "#fff", boxShadow: "0 4px 24px rgba(44,36,22,0.08)", height: "100%" }}>
@@ -307,7 +309,7 @@ function PratosAssinatura() {
             </p>
           </div>
         </FadeIn>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }}>
+        <div className="grid-cols-3" style={{ gap: 24 }}>
           {pratos.map((p, i) => (
             <FadeIn key={p.nome} delay={i * 130}>
               <div className="card-hover" style={{ borderRadius: 16, overflow: "hidden", background: "rgba(249,242,234,0.05)", border: "1px solid rgba(182,99,49,0.2)", height: "100%" }}>
@@ -338,7 +340,7 @@ function Sopas() {
   const acompanhamentos = ["Crispy de Couve", "Crispy de Cebola", "Torradinhas", "Queijo Ralado", "Canjica (sobremesa)"];
   return (
     <section id="sopas" style={{ padding: "96px 24px", background: "#2C2416" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start" }}>
+      <div className="grid-cols-2" style={{ maxWidth: 1200, margin: "0 auto", gap: 80, alignItems: "start" }}>
         <FadeIn direction="left">
           <div>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, marginBottom: 20 }}>
@@ -387,11 +389,11 @@ function Sopas() {
         <FadeIn direction="right" delay={200}>
           <div style={{ position: "relative" }}>
             <div style={{ position: "absolute", inset: -24, borderRadius: 32, background: "radial-gradient(ellipse at 60% 40%, rgba(182,99,49,0.12) 0%, transparent 70%)", pointerEvents: "none" }} />
-            <div style={{ display: "flex", gap: 12, height: 520, position: "relative" }}>
+            <div className="sopas-photo-stack">
               <div className="photo-zoom" style={{ flex: "0 0 58%", borderRadius: 20, overflow: "hidden", position: "relative", boxShadow: "0 8px 32px rgba(0,0,0,0.4)" }}>
                 <Image src="/images/sopa1.jpg" alt="Sopas artesanais Varanda" fill style={{ objectFit: "cover" }} />
               </div>
-              <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 12 }}>
+              <div className="sopas-col-right">
                 <div className="photo-zoom" style={{ flex: 1, borderRadius: 20, overflow: "hidden", position: "relative", boxShadow: "0 8px 32px rgba(0,0,0,0.4)" }}>
                   <Image src="/images/sopa2.jpg" alt="Sopa de inverno" fill style={{ objectFit: "cover" }} />
                 </div>
@@ -425,7 +427,7 @@ function Galeria() {
             <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(30px, 3.5vw, 48px)", color: "#2C2416" }}>Uma experiência visual</h2>
           </div>
         </FadeIn>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
+        <div className="grid-cols-3" style={{ gap: 12 }}>
           {fotos.map((f, i) => (
             <FadeIn key={f.src} delay={i * 80}>
               <div className="photo-zoom" style={{ borderRadius: 16, overflow: "hidden", aspectRatio: "4/3", position: "relative" }}>
@@ -448,7 +450,7 @@ function ClubVaranda() {
   ];
   return (
     <section id="club" style={{ padding: "96px 24px", background: "#9B9E73" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+      <div className="grid-cols-2" style={{ maxWidth: 1200, margin: "0 auto", gap: 80, alignItems: "center" }}>
         <FadeIn direction="left">
           <div>
             <p style={{ color: "#F9F2EA", fontSize: 13, fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 12 }}>Fidelidade</p>
@@ -501,7 +503,7 @@ function HorariosPrecos() {
             </h2>
           </div>
         </FadeIn>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
+        <div className="grid-cols-2" style={{ gap: 32 }}>
           {horarios.map((h, i) => (
             <FadeIn key={h.periodo} delay={i * 90}>
               <div className="card-hover" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "20px 28px", background: "#fff", borderRadius: 12, border: "1px solid rgba(155,158,115,0.2)", boxShadow: "0 2px 12px rgba(44,36,22,0.05)" }}>
@@ -519,7 +521,7 @@ function HorariosPrecos() {
 function Localizacao() {
   return (
     <section id="contato" style={{ padding: "96px 24px", background: "#2C2416" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80 }}>
+      <div className="grid-cols-2" style={{ maxWidth: 1200, margin: "0 auto", gap: 80 }}>
         <FadeIn direction="left">
           <div>
             <p style={{ color: "#B66331", fontSize: 13, fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 16 }}>Localização</p>
