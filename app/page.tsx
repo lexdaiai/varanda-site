@@ -15,6 +15,7 @@ export default function Home() {
       <PratosAssinatura />
       <Sopas />
       <Galeria />
+      <Eventos />
       <ClubVaranda />
       <HorariosPrecos />
       <Localizacao />
@@ -36,6 +37,7 @@ function Nav() {
           <div className="nav-desktop-links">
             <a href="#cardapio" className="nav-link" style={{ color: "#2C2416", textDecoration: "none", fontSize: 14, fontWeight: 400, letterSpacing: "0.05em" }}>Cardápio</a>
             <a href="#sopas" className="nav-link" style={{ color: "#2C2416", textDecoration: "none", fontSize: 14, fontWeight: 400, letterSpacing: "0.05em" }}>Sopas</a>
+            <a href="#eventos" className="nav-link" style={{ color: "#2C2416", textDecoration: "none", fontSize: 14, fontWeight: 400, letterSpacing: "0.05em" }}>Eventos</a>
             <a href="#club" className="nav-link" style={{ color: "#2C2416", textDecoration: "none", fontSize: 14, fontWeight: 400, letterSpacing: "0.05em" }}>Club</a>
             <a href="#contato" className="nav-link" style={{ color: "#2C2416", textDecoration: "none", fontSize: 14, fontWeight: 400, letterSpacing: "0.05em" }}>Contato</a>
           </div>
@@ -436,6 +438,74 @@ function Galeria() {
             </FadeIn>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+
+function Eventos() {
+  const tipos = [
+    {
+      icon: "💒",
+      titulo: "Mini Casamentos",
+      desc: "Ambiente intimista com lareira, varanda exclusiva e buffet personalizado para celebrar com quem você ama.",
+    },
+    {
+      icon: "🎂",
+      titulo: "Aniversários",
+      desc: "Festas personalizadas com decoração, cardápio exclusivo e toda a estrutura para uma celebração inesquecível.",
+    },
+    {
+      icon: "🏢",
+      titulo: "Eventos Corporativos",
+      desc: "Confraternizações, jantares de negócios e encontros de equipe com ambiente aconchegante e culinária de qualidade.",
+    },
+    {
+      icon: "🥂",
+      titulo: "Celebrações Especiais",
+      desc: "Noivados, formaturas, reuniões familiares — qualquer ocasião merece o cuidado e o sabor do Varanda.",
+    },
+  ];
+  return (
+    <section id="eventos" style={{ padding: "96px 24px", background: "#F9F2EA" }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        <FadeIn>
+          <div style={{ textAlign: "center", marginBottom: 64 }}>
+            <p style={{ color: "#B66331", fontSize: 13, fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 12 }}>
+              Eventos
+            </p>
+            <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(30px, 3.5vw, 48px)", color: "#2C2416", lineHeight: 1.2, marginBottom: 16 }}>
+              Realize seu evento no Varanda
+            </h2>
+            <p style={{ color: "#5a4a38", fontSize: 18, maxWidth: 580, margin: "0 auto", fontWeight: 300, lineHeight: 1.7 }}>
+              Da sala com lareira à varanda ao ar livre — nosso espaço se transforma para criar a celebração perfeita.
+            </p>
+          </div>
+        </FadeIn>
+        <div className="grid-cols-2" style={{ gap: 24, marginBottom: 48 }}>
+          {tipos.map((t, i) => (
+            <FadeIn key={t.titulo} delay={i * 100}>
+              <div className="card-hover" style={{ background: "#fff", borderRadius: 16, padding: 32, border: "1px solid rgba(155,158,115,0.2)", boxShadow: "0 4px 24px rgba(44,36,22,0.06)", height: "100%" }}>
+                <span style={{ fontSize: 36, display: "block", marginBottom: 16 }}>{t.icon}</span>
+                <h3 style={{ fontFamily: "var(--font-heading)", fontSize: 22, color: "#2C2416", marginBottom: 10 }}>{t.titulo}</h3>
+                <p style={{ fontSize: 15, color: "#5a4a38", lineHeight: 1.7, fontWeight: 300 }}>{t.desc}</p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+        <FadeIn>
+          <div style={{ background: "#2C2416", borderRadius: 20, padding: "40px 48px", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 24 }}>
+            <div>
+              <p style={{ color: "#B66331", fontSize: 13, fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 8 }}>Vamos conversar?</p>
+              <p style={{ color: "#F9F2EA", fontSize: 20, fontWeight: 600, fontFamily: "var(--font-heading)", marginBottom: 4 }}>Orçamento sem compromisso</p>
+              <p style={{ color: "#9B9E73", fontSize: 15, fontWeight: 300 }}>Espaço climatizado · Lareira · Estacionamento · Catering próprio</p>
+            </div>
+            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="btn-scale"
+              style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "#B66331", color: "#fff", padding: "16px 36px", borderRadius: 999, fontSize: 15, fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap" }}>
+              💬 Falar sobre meu evento
+            </a>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
