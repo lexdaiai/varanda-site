@@ -15,7 +15,6 @@ export default function Home() {
       <PratosAssinatura />
       <Sopas />
       <Galeria />
-      <Instagram />
       <ClubVaranda />
       <HorariosPrecos />
       <Localizacao />
@@ -442,48 +441,6 @@ function Galeria() {
   );
 }
 
-function Instagram() {
-  return (
-    <section style={{ padding: "80px 24px", background: "#2C2416" }}>
-      <FadeIn>
-        <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
-          {/* Instagram gradient ring */}
-          <div style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 72, height: 72, borderRadius: "50%", background: "linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)", marginBottom: 24 }}>
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-              <circle cx="12" cy="12" r="4" />
-              <circle cx="17.5" cy="6.5" r="0.8" fill="#fff" stroke="none" />
-            </svg>
-          </div>
-          <p style={{ color: "#9B9E73", fontSize: 13, fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 12 }}>
-            Instagram
-          </p>
-          <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(28px, 3.5vw, 44px)", color: "#F9F2EA", marginBottom: 16, lineHeight: 1.2 }}>
-            @varandagourmetcl
-          </h2>
-          <p style={{ color: "#CCCEB9", fontSize: 17, lineHeight: 1.7, marginBottom: 36, fontWeight: 300, maxWidth: 500, margin: "0 auto 36px" }}>
-            Cardápio do dia, novidades, promoções e momentos especiais — tudo por lá primeiro.
-          </p>
-          <a
-            href="https://www.instagram.com/varandagourmetcl/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-scale"
-            style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)", color: "#fff", padding: "14px 32px", borderRadius: 999, fontSize: 15, fontWeight: 700, textDecoration: "none" }}
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-              <circle cx="12" cy="12" r="4" />
-              <circle cx="17.5" cy="6.5" r="0.8" fill="#fff" stroke="none" />
-            </svg>
-            Seguir no Instagram
-          </a>
-        </div>
-      </FadeIn>
-    </section>
-  );
-}
-
 function ClubVaranda() {
   const beneficios = [
     { icon: "💰", titulo: "10% de Cashback", desc: "No almoço e no buffet de sopas" },
@@ -605,6 +562,10 @@ function Localizacao() {
               <a href="https://www.ifood.com.br/delivery/campo-largo-pr/varanda-gourmet-centro/38d6dc54-c40e-4b25-8f67-40210a6dbf6f" target="_blank" rel="noopener noreferrer" className="btn-scale"
                 style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, background: "rgba(155,158,115,0.2)", color: "#CCCEB9", padding: "14px 28px", borderRadius: 12, fontSize: 15, fontWeight: 700, textDecoration: "none", border: "1px solid rgba(155,158,115,0.3)" }}>
                 <span>🛵</span> Pedir pelo iFood
+              </a>
+              <a href="https://www.instagram.com/varandagourmetcl/" target="_blank" rel="noopener noreferrer" className="btn-scale"
+                style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, background: "rgba(155,158,115,0.2)", color: "#CCCEB9", padding: "14px 28px", borderRadius: 12, fontSize: 15, fontWeight: 700, textDecoration: "none", border: "1px solid rgba(155,158,115,0.3)" }}>
+                <span>📸</span> Instagram
               </a>
             </div>
           </div>
